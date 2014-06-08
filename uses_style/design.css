@@ -79,11 +79,6 @@ ul#menu li a
 
 ul#menu li a:hover
 {
-    background-color: #e8eef4;
+    background-color: #2F4F4F;
     text-decoration: underline;
-}
-
-
-.bcg{
-    background-color: #e8eef4;
 }

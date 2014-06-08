@@ -16,7 +16,7 @@
  The above copyright notice and this permission notice shall be included in all
  copies or substantial portions of the Software.
  
- THE SOFTWARE IS PROVIDED"AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -30,6 +30,7 @@ var login = 'login.php';
 var view = 'view.php';
 var register = 'register.php';
 
+//redirecting to desired menu starts
 $("#m1").click(function(){
     window.location = home;
 });
@@ -45,3 +46,14 @@ $('#m3').click(function(){
 $('#m4').click(function(){
     window.location = register;
 });
+//redirecting to desired menu ends
+
+//changing text color on mouse hover to make it visible with backgroung change starts
+$('a').mouseover(function(){
+    $(this).css('color','#FFF');
+});
+
+$('a').mouseout(function(){
+    $(this).css('color','#000');
+});
+//changing text color on mouse hover ends
