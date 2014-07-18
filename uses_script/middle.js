@@ -25,38 +25,22 @@
  SOFTWARE.
  */
 
-var home = 'index.php';
-var login = 'login.php';
-var view = 'view.php';
-var register = 'register.php';
-var account = 'account.php';
-var logout = 'logout.php';
-
 $(document).ready(function() {
-   //redirecting to desired menu starts
-    $("#m1").click(function(){
-        window.location = home;
-    });
-
-    $('#m2').click(function(){
-        window.location = view;
-    });
-
-    $('#m3').click(function(){
-        window.location = login;
-    });
-
-    $('#m4').click(function(){
-        window.location = register;
-    });
+   
+   function centerDiv(){
+    window_width = $(window).width();
+    window_height = $(window).height();
     
-    $('#m5').click(function() {
-        window.location = account;
-    });
+    div_width = $("#loginform").width();
+    div_height = $("#loginform").height();
     
-    $('#m6').click(function() {
-        window.location = logout;
-    });
-    //redirecting to desired menu ends
-
+    $("#loginform").css('top', (window_height/2)-(div_height/2)).css('left', (window_width/2)-(div_width/2));
+    
+   }
+   
+   centerDiv();
+   
+    $(window).resize(function() {
+      centerDiv();
+   });
 });

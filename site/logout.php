@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /**
 The MIT License (MIT)
@@ -26,29 +26,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-require_once 'class.DatabaseConstants.php';
-require_once '../uses_classes/class.DBase.php';
-require_once 'class.SiteConstant.inc';
 
-$db = new DatabaseConstants();
-//initiating databse class
-$dBase = new DBase($db->getHost(),$db->getUser(), $db->getPass());
-$dBase->setDatabaseName($db->getDb());
-if($dBase->connectDatabase()){
-    $siteQuery = mysqli_query($dBase->getDbobj(),'SELECT title,link,header FROM siteinfo WHERE id=1');
-    $siteData = mysqli_fetch_assoc($siteQuery);
-}
-$dBase->closeDatabse($dBase->getDbobj());
-
-//initiating SiteConstant class
-$siteConstant = new SiteConstant($siteData['title'],$siteData['link'],$siteData['header']);
-
-
-
-//adding external files
-//css files
-$siteConstant->addFile('css', 'design.css');
-
-//jquery files
-$siteConstant->addFile('jq', 'jquery.js');
-$siteConstant->addFile('jq', 'menu.js');
+session_start();
+ 
+unset($_SESSION);
+session_destroy();
+     
+$siteConstant->loggedIn = false;
+     
+header('location: index.php');

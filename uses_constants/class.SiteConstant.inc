@@ -36,6 +36,7 @@ class SiteConstant {
     public $title;
     public $link;
     public $header;
+    public $loggedIn;
     
     private $cssFile = array();
     private $jsFile = array();
@@ -45,17 +46,19 @@ class SiteConstant {
     /**
      * initialized the class
      */
-    public function __construct(){
-        $this->title = "Title";
-        $this->link = "localhost/PTC/site/";
-        $this->header = "Paid to View";
+    public function __construct($t,$l,$h){
+        $this->title = $t;
+        $this->link = $l;
+        $this->header = $h;
+        $this->loggedIn = false;
     }
     /**
      * Returns header html upto body starting tag including external files
      * @return HTML
      */
     public function getHead(){
-        $ht = '<html><head>
+        $ht = '<!DOCTYPE html>';
+        $ht .= '<html><head>
         <title id="title">'.$this->title.'</title>';
         
         foreach ($this->cssFile as $css) {
@@ -89,12 +92,25 @@ class SiteConstant {
      * @return html
      */
     public function getMenu(){
-        $ht = '<ul id="menu">
+        
+        if(isset($_SESSION['username']) && isset($_SESSION['password'])||isset($_SESSION['adminusername']) && isset($_SESSION['adminpassword'])){
+            $this->loggedIn = true;
+        }
+        if(!$this->loggedIn){
+            $ht = '<ul id="menu">
                 <li id="m1"><a href="#">Home</a></li>
                 <li id="m2"><a href="#">View Ads</a></li>
                 <li id="m3"><a href="#">Login</a></li>
                 <li id="m4"><a href="#">Register</a></li>
               </ul>';
+        }else{
+            $ht = '<ul id="menu">
+                <li id="m1"><a href="#">Home</a></li>
+                <li id="m2"><a href="#">View Ads</a></li>
+                <li id="m5"><a href="#">Account</a></li>
+                <li id="m6"><a href="#">Logout</a></li>
+              </ul>';
+        }
         return $ht;
     }
     

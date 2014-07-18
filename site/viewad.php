@@ -26,29 +26,48 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-require_once 'class.DatabaseConstants.php';
-require_once '../uses_classes/class.DBase.php';
-require_once 'class.SiteConstant.inc';
+?>
 
-$db = new DatabaseConstants();
-//initiating databse class
-$dBase = new DBase($db->getHost(),$db->getUser(), $db->getPass());
-$dBase->setDatabaseName($db->getDb());
-if($dBase->connectDatabase()){
-    $siteQuery = mysqli_query($dBase->getDbobj(),'SELECT title,link,header FROM siteinfo WHERE id=1');
-    $siteData = mysqli_fetch_assoc($siteQuery);
+<?php
+
+session_start();
+require_once '../uses_constants/initSite.php';
+
+echo $siteConstant->getHead();
+
+$link = $_GET['l'];
+$adid = $_GET['aid'];
+
+$framelink = 'viewadframe.php?adid='.$adid;
+
+?>
+<style>
+    html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
 }
-$dBase->closeDatabse($dBase->getDbobj());
-
-//initiating SiteConstant class
-$siteConstant = new SiteConstant($siteData['title'],$siteData['link'],$siteData['header']);
-
-
-
-//adding external files
-//css files
-$siteConstant->addFile('css', 'design.css');
-
-//jquery files
-$siteConstant->addFile('jq', 'jquery.js');
-$siteConstant->addFile('jq', 'menu.js');
+    #siteFrame {
+        width: 100%;
+        height: 10%;
+        margin: 0px;
+        padding: 0px;
+        background: blue;
+        border: 0px;
+        display: block;    
+}
+#adFrame {
+        width: 100%;
+        height: 90%;
+        margin: 0px;
+        padding: 0px;
+        background: blue;
+        border: 0px;
+        display: block;
+        
+}
+</style>
+<iframe id='siteFrame' name='siteFrame' src='<?php echo $framelink; ?>' scrolling='no'><p>Your browser does not support iframes.</p></iframe>
+<iframe id='adFrame' name='adFrame' src='<?php echo $link; ?>' scrolling='yes'><p>Your browser does not support iframes.</p></iframe>
