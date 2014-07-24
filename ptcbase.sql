@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2014 at 12:05 AM
+-- Generation Time: Jul 24, 2014 at 07:08 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -86,6 +86,13 @@ CREATE TABLE IF NOT EXISTS `siteinfo` (
   `adminpass` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `siteinfo`
+--
+
+INSERT INTO `siteinfo` (`id`, `title`, `link`, `header`, `payment1`, `payment2`, `payment3`, `minimumtowithdraw`, `adminuser`, `adminpass`) VALUES
+(1, 'BD View', 'http://www.bdview.com/', 'BD View', 'Payza Email', 'Bkash Number', 'Bank Account Details', 100, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
