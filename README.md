@@ -15,4 +15,6 @@ A open source Paid to click/view website script.
     * Almost all the settings and informations can be changed from admin.php<br>
     * Feel free to explore the rest.........<br>
   <br>
+  Demo : <a href="http://www.ariondev.com/ptc">www.ariondev.com/ptc</a>
+  <br><br>
   If you have any Suggestion feel free to email me at : sdewan64@gmail.com
