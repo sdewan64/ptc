@@ -18,4 +18,4 @@ A open source Paid to click/view website script.
   Demo : <a href="http://www.ariondev.com/">www.ariondev.com/</a>
   <br><br>
   If you have any Suggestion feel free to email me at : sdewan64@gmail.com
-<a href="http://www.kapipal.com/opensourceptc" style="border: none !important;"><img alt="Kapipal" src="http://www.kapipal.com/static/images/badges/donate.png" style="height: 81px !important; width: 137px !important"/></a>
+
