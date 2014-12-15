@@ -56,7 +56,9 @@ if(isset($_POST['login'])){
 }
 
 $token = $_SESSION['token'] = md5(uniqid(mt_rand(),true));
-    
+if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+	echo "<br /><br /><br /><center><h3 style=\"color:red;\"><b>You are already Logged in!</b></h3></center>";
+}else{    
 ?>
 
 <form id="msform" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="top:100px;">
@@ -77,5 +79,5 @@ $token = $_SESSION['token'] = md5(uniqid(mt_rand(),true));
 </form>
 
 <?php
-
+}
 echo $siteConstant->getTail();
