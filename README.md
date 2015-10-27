@@ -8,8 +8,8 @@ A open source Paid to click/view website script.
   Current Status : A working script.I had to hurry because of submission date of project so some files are made over hour which might not be coded well enough.Just a working script.<br>
 <br>
   How to use :<br>
-    * Host everything in your hosting.<br>
-    * Import ptcbase.sql in a mysql database.<br>
+    * Host everything in your own hosting.<br>
+    * Import ptcbase.sql to your mysql database (PHPMYADMIN in CPANEL).<br>
     * Fill your mysql database information in uses_constants/class.DatabaseConstants.php<br>
     * Edit site information from site/admin.php [admin panel username:admin,password:admin]<br>
     * Almost all the settings and informations can be changed from admin.php<br>
