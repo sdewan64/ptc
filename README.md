@@ -1,19 +1,19 @@
 ptc
 ===
 
-A open source Paid to click/view website script.
+An open source Paid to click/view website script.
 <br>
-  A very simple paid to click website.You must implement a nicer design yourself for better looks.Feel free to change or edit or upgrade the script yourself.Email me to get commit privilage.<br>
+  A very simple paid to click website. The design is simple so you can customize it. This project is open source, so you are very welcome to upgrade and customize this script. Email me to get commit privilage.<br>
   <br>
-  Current Status : A working script.I had to hurry because of submission date of project so some files are made over hour which might not be coded well enough.Just a working script.<br>
+  Current Status : A working script. I had to hurry because of submission date of project so some files are made over hour which might not be coded well enough.<br>
 <br>
   How to use :<br>
-    * Host everything in your own hosting.<br>
-    * Import ptcbase.sql to your mysql database (PHPMYADMIN in CPANEL).<br>
+    * Host everything using your own hosting.<br>
+    * Import ptcbase.sql to your mysql database (PHPMYADMIN in cPanel).<br>
     * Fill your mysql database information in uses_constants/class.DatabaseConstants.php<br>
     * Edit site information from site/admin.php [admin panel username:admin,password:admin]<br>
-    * Almost all the settings and informations can be changed from admin.php<br>
-    * Feel free to explore the rest.........<br>
+    * Most settings and informations can be changed from admin.php<br>
+    * Explore!<br>
   <br>
   Demo : <a href="http://www.ariondev.com/">www.ariondev.com/</a>
   <br><br>
