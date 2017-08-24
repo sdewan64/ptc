@@ -1,3 +1,4 @@
+***** No longer supporting this *****
 ptc
 ===
 
@@ -15,7 +16,5 @@ An open source Paid to click/view website script.
     * Most settings and informations can be changed from admin.php<br>
     * Explore!<br>
   <br>
-  Demo : <a href="http://www.ariondev.com/">www.ariondev.com/</a>
-  <br><br>
-  If you have any Suggestion feel free to email me at : sdewan64@gmail.com
+
 
